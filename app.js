@@ -62,8 +62,8 @@ io.on('connection', (socket) => {
     })
 });
 
-server.listen(4500, async (data,error) => {
+server.listen(4500, (data,error) => {
     if(error)console.log(error.message)
     if(data) console.log(data)
-    console.log("server is listening on http://localhost:" + PORT)
+    console.log("server is listening on http://localhost:" + 4500)
 })
