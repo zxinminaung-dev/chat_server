@@ -4,7 +4,6 @@ const cron = require('node-cron')
 const DateHelper = require('./src/utils/date.helper')
 const http = require('http')
 const bodyParser = require('body-parser')
-const { testConnection } = require('./src/database/database')
 const cors = require('cors')
 const socket = require('./src/services/base/socket.service')
 const PORT =  process.env.APP_PORT;
@@ -63,7 +62,7 @@ io.on('connection', (socket) => {
     })
 });
 
-server.listen(PORT, async (data,error) => {
+server.listen(4500, async (data,error) => {
     if(error)console.log(error.message)
     if(data) console.log(data)
     console.log("server is listening on http://localhost:" + PORT)
