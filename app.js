@@ -7,11 +7,10 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const socket = require('./src/services/base/socket.service')
 const PORT =  process.env.APP_PORT;
+const client = require('./src/services/common/redis.service')
 const app = express()
 app.use(bodyParser.json({ limit: '10mb' }));
 app.use(bodyParser.urlencoded({ limit: '10mb', extended: true }));
-
-
 //cors origin
 var corsOptions = {
     origin: "*",
@@ -37,6 +36,15 @@ cron.schedule('* * * * *', () => {
     scheduled: true,
     timezone: 'Asia/Yangon' // Set timezone to Asia/Yangon
 });
+// client.connect();
+// // Handle connection events (optional)
+// client.on('connect', function() {
+//     console.log('Connected to Redis');
+// });
+
+// client.on('error', function(err) {
+//     console.error('Redis error:', err);
+// });
 //socket connection
 const io=socket.init(server)
 io.on('connection', (socket) => {
