@@ -22,7 +22,7 @@ router.get('/send_to_gf', (req,res)=>{
         time: new Date()
     } 
     console.log(data)
-    socketService.sendMessageToClients(data)
+    socketService.sendMessageToGF(data)
     res.json({success:true}).status(200);
 })
 module.exports = router;

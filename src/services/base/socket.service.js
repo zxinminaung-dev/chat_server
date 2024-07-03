@@ -20,6 +20,9 @@ module.exports =  {
     sendMessageToClients: function (message) {
         io.emit('message', message);
     },
+    sendMessageToGF: function (message) {
+        io.emit('gf-message', message);
+    },
     sendCount: function (count) {
         console.log(count)
         io.emit('count', count);
