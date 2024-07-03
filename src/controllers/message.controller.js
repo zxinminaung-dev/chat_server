@@ -15,7 +15,7 @@ router.get('/send', (req,res)=>{
     res.json({success:true}).status(200);
    
 })
-router.get('/send_to_gf', (req,res)=>{
+router.post('/sendtogf', (req,res)=>{
     let data ={
         name: req.query.name,
         message:req.query.message,
